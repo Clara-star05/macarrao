@@ -1,0 +1,199 @@
+/* CASA DO MACARRÃO — tema de restaurante chinês */
+
+:root {
+    --vermelho-escuro: #650f16;
+    --vermelho: #a51f27;
+    --vermelho-vivo: #c52b32;
+    --dourado: #d6a84b;
+    --dourado-claro: #f0d58b;
+    --creme: #fff8e9;
+    --texto: #3b211b;
+    --branco: #ffffff;
+    --sombra: 0 10px 28px rgba(67, 17, 15, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: var(--texto);
+    font-family: Georgia, 'Times New Roman', serif;
+    text-align: center;
+    background:
+        radial-gradient(circle at top, rgba(214, 168, 75, 0.16), transparent 35%),
+        linear-gradient(135deg, #fffaf0, #f5e7ce);
+}
+
+h1 {
+    margin: 8px 0 30px;
+    color: var(--vermelho-escuro);
+    font-size: clamp(30px, 5vw, 42px);
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 0 var(--dourado-claro);
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 3px;
+    margin: 14px auto 0;
+    border-radius: 5px;
+    background: var(--dourado);
+}
+
+/* Formulários */
+form,
+body > label,
+body > input,
+body > button,
+body > table {
+    max-width: 620px;
+}
+
+form {
+    width: min(100%, 520px);
+    margin: 0 auto 28px;
+    padding: 30px;
+    border: 1px solid var(--dourado);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: var(--sombra);
+    text-align: left;
+}
+
+label {
+    display: inline-block;
+    margin: 9px 0 7px;
+    color: var(--vermelho-escuro);
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    min-height: 43px;
+    margin: 4px 0 12px;
+    padding: 11px 13px;
+    border: 1px solid #d9c49b;
+    border-radius: 7px;
+    outline: none;
+    background: #fffdf8;
+    color: var(--texto);
+    font: 16px Arial, sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 3px rgba(214, 168, 75, 0.2);
+}
+
+input:disabled {
+    background: #eee6d8;
+    color: #786b5d;
+}
+
+button,
+input[type='button'] {
+    display: inline-block;
+    width: auto;
+    min-height: 42px;
+    margin: 8px 5px 12px 0;
+    padding: 11px 23px;
+    border: 1px solid var(--dourado);
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--vermelho), var(--vermelho-escuro));
+    color: var(--dourado-claro);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+button:hover,
+input[type='button']:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--vermelho-vivo), var(--vermelho));
+    box-shadow: 0 5px 13px rgba(101, 15, 22, 0.2);
+}
+
+/* Tabela de pessoas cadastradas */
+table {
+    width: min(100%, 900px);
+    margin: 25px auto 30px;
+    overflow: hidden;
+    border: 1px solid var(--dourado);
+    border-collapse: collapse;
+    border-radius: 10px;
+    background: var(--branco);
+    box-shadow: var(--sombra);
+}
+
+thead {
+    background: var(--vermelho-escuro);
+    color: var(--dourado-claro);
+    font-weight: bold;
+}
+
+td {
+    padding: 15px 18px;
+    border: 1px solid #eadbbd;
+}
+
+tbody tr:nth-child(even) {
+    background: #fff5e2;
+}
+
+tbody tr:hover {
+    background: #f6e5bd;
+}
+
+/* Navegação */
+a {
+    display: inline-block;
+    margin: 7px 5px;
+    padding: 10px 19px;
+    border: 1px solid var(--dourado);
+    border-radius: 7px;
+    background: var(--vermelho-escuro);
+    color: var(--dourado-claro);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    background: var(--vermelho-vivo);
+}
+
+br {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 12px;
+    }
+
+    form {
+        padding: 22px 17px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    a {
+        margin: 5px 2px;
+        padding: 9px 12px;
+    }
+}
